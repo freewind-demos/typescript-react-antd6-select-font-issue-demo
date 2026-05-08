@@ -1,6 +1,7 @@
 import type {FC} from "react";
 import {useEffect, useRef, useState} from "react";
 import {Button, Input, Select, Typography} from "antd";
+import "./App.css";
 
 const noneLangValue = "__none__";
 const emptyFontValue = "(未取到)";
@@ -46,67 +47,6 @@ type SampleRow = {
   name: string;
   font: string;
 };
-
-const demoCss = `
-  .demo-scope {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .demo-sample-select {
-    padding: 8px 12px;
-  }
-
-  .demo-sample-input,
-  .demo-sample-textarea,
-  .demo-sample-input,
-  .demo-sample-textarea {
-    width: 100%;
-    padding: 8px 12px;
-  }
-
-  .demo-sample-button {
-    padding: 8px 12px;
-  }
-
-  .demo-scope th,
-  .demo-scope td {
-    padding: 12px 16px;
-    border: 1px solid #d9d9d9;
-    vertical-align: top;
-  }
-
-  .demo-scope td:nth-child(2) {
-    line-height: 1.5;
-  }
-
-  .demo-font-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .demo-font-table th,
-  .demo-font-table td {
-    padding: 8px 12px;
-    border: 1px solid #d9d9d9;
-    vertical-align: top;
-  }
-
-  .demo-font-note {
-    color: #595959;
-    font-size: 14px;
-    line-height: 1.5;
-    word-break: break-all;
-  }
-
-  .demo-ant-row {
-    background: #fafafa;
-  }
-
-  .demo-font-note-alert {
-    color: #cf1322;
-  }
-`;
 
 const getFontFamily = (element: Element | null) =>
   element ? getComputedStyle(element).fontFamily : emptyFontValue;
@@ -261,7 +201,6 @@ const App: FC = () => {
         boxSizing: "border-box",
       }}
     >
-      <style>{demoCss}</style>
       <h1>Antd 6 Select font follow demo</h1>
       <p>
         目标：只留一个 <code>antd Select</code>，放大“外层 font”信号。
